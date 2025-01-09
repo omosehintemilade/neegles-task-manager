@@ -12,7 +12,7 @@ interface Props {
 }
 
 export function CreateOrUpdateTask({ defaultValues, open, setOpen }: Props) {
-  const { updateTask } = useTasks();
+  const { updateTask, addTask } = useTasks();
   const {
     register,
     control,
@@ -33,7 +33,11 @@ export function CreateOrUpdateTask({ defaultValues, open, setOpen }: Props) {
   ]);
 
   const onSubmit: SubmitHandler<Task> = (data) => {
-    updateTask(data.id, data);
+    if (defaultValues) {
+      updateTask(data.id, data);
+    } else {
+      addTask(data);
+    }
     setOpen(false);
   };
 
