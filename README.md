@@ -1,5 +1,8 @@
 # Task Manager Dashboard
 
+![Dashboard Light Mode](./src/assets/dashboard__dark.png)
+![Dashboard Dark Mode](./src/assets/dashboard__light.png)
+
 A simple and intuitive Kanban-style task management dashboard built with React, Vite, and TailwindCSS.
 
 ## Features
