@@ -25,9 +25,11 @@ const KanbanColumn = ({ id, title, tasks }: Props) => {
           )}
         </div>
         <div className="space-y-4">
-          {tasks.map((task) => (
-            <TaskCard key={task.id} task={task} />
-          ))}
+          {tasks.length ? (
+            tasks.map((task) => <TaskCard key={task.id} task={task} />)
+          ) : (
+            <div>Empty</div>
+          )}
         </div>
       </div>
       <CreateOrUpdateTask open={open} setOpen={(state) => setOpen(state)} />
