@@ -55,7 +55,7 @@ export function CreateOrUpdateTask({ defaultValues, open, setOpen }: Props) {
         body={
           <form className="space-y-4 mb-6" onSubmit={handleSubmit(onSubmit)}>
             <div className="space-y-1.5">
-              <label className="text-right">Title</label>
+              <label>Title</label>
               <input
                 className="w-full p-2 border rounded outline-none text-gray-600 focus-within:ring-1"
                 {...register("title", { required: "title cannot be empty" })}
@@ -63,7 +63,7 @@ export function CreateOrUpdateTask({ defaultValues, open, setOpen }: Props) {
               <FormError fieldError={errors.title} />
             </div>
             <div className="space-y-1.5">
-              <label className="text-right">Description</label>
+              <label>Description</label>
               <textarea
                 className="w-full p-2 border rounded outline-none text-gray-600 resize-none min-h-16 focus-within:ring-1"
                 {...register("description", {
@@ -73,7 +73,7 @@ export function CreateOrUpdateTask({ defaultValues, open, setOpen }: Props) {
               <FormError fieldError={errors.description} />
             </div>
             <div className="space-y-1.5">
-              <label className="text-right">Status</label>
+              <label>Status</label>
               <Controller
                 name="status"
                 control={control}
@@ -93,7 +93,7 @@ export function CreateOrUpdateTask({ defaultValues, open, setOpen }: Props) {
             </div>
 
             <div className="space-y-1.5">
-              <label className="text-right">Priority</label>
+              <label>Priority</label>
 
               <Controller
                 name="priority"

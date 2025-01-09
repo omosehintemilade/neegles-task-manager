@@ -31,7 +31,7 @@ export function SelectDropdown({
     if (labelRef.current) {
       setContentContainerWidth(labelRef.current.clientWidth);
     }
-  }, [labelRef]);
+  });
 
   return (
     <DropdownMenu>
@@ -46,8 +46,9 @@ export function SelectDropdown({
         align="start"
         style={{ width: contentContainerWidth }}
       >
-        {options.map((option) => (
+        {options.map((option, idx) => (
           <DropdownMenuItem
+            key={idx}
             onClick={() => {
               setLabelValue(option.label);
               onChange?.(option.value);
