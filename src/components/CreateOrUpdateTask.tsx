@@ -57,7 +57,7 @@ export function CreateOrUpdateTask({ defaultValues, open, setOpen }: Props) {
             <div className="space-y-1.5">
               <label>Title</label>
               <input
-                className="w-full p-2 border rounded outline-none text-gray-600 focus-within:ring-1"
+                className="input-style"
                 {...register("title", { required: "title cannot be empty" })}
               />
               <FormError fieldError={errors.title} />
@@ -65,7 +65,7 @@ export function CreateOrUpdateTask({ defaultValues, open, setOpen }: Props) {
             <div className="space-y-1.5">
               <label>Description</label>
               <textarea
-                className="w-full p-2 border rounded outline-none text-gray-600 resize-none min-h-16 focus-within:ring-1"
+                className="input-style resize-none min-h-16"
                 {...register("description", {
                   required: "description cannot be empty"
                 })}

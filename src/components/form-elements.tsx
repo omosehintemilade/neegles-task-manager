@@ -35,14 +35,11 @@ export function SelectDropdown({
 
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger
-        ref={labelRef}
-        className="w-full p-2 border rounded text-left text-gray-600"
-      >
+      <DropdownMenuTrigger ref={labelRef} className="input-style text-left">
         {labelValue}
       </DropdownMenuTrigger>
       <DropdownMenuContent
-        className="min-w-72"
+        className="min-w-72 bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
         align="start"
         style={{ width: contentContainerWidth }}
       >

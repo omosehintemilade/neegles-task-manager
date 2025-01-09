@@ -33,7 +33,8 @@ export function DeleteTask({ taskId, open, setOpen, onCompleted }: Props) {
             }
           },
           secondary: {
-            className: "bg-transparent border shadow-sm text-black",
+            className:
+              "bg-transparent border shadow-sm text-black dark:text-white dark:bg-gray-700",
             text: "Cancel"
           }
         }}

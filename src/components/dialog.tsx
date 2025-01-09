@@ -42,7 +42,7 @@ export function DialogExtract({
 }: Props) {
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="sm:max-w-[425px]">
+      <DialogContent className="sm:max-w-[425px] dark:bg-gray-800">
         <DialogHeader>
           <DialogTitle>{title}</DialogTitle>
         </DialogHeader>
@@ -63,7 +63,7 @@ export function DialogExtract({
             type="button"
             onClick={actionButtons?.primary?.onClick}
             className={cn(
-              "rounded px-4 py-2 text-white bg-black",
+              "rounded px-4 py-2 text-white bg-black dark:bg-gray-700",
               actionButtons?.primary?.className
             )}
           >

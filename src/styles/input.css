@@ -57,3 +57,10 @@
     @apply font-sans antialiased bg-background text-foreground;
   }
 }
+
+@layer components {
+  .input-style {
+    @apply w-full p-2 border rounded outline-none focus-within:ring-1 bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-300;
+    /* @apply w-full p-2 border rounded outline-none text-gray-600 focus-within:ring-1  dark:text-gray-300; */
+  }
+}

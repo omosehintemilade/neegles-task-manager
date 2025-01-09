@@ -2,9 +2,12 @@ import { useState } from "react";
 import FilterSection, { FIlterType } from "../components/FilterSection";
 import KanbanBoard from "../components/KanbanBoard";
 import { useTasks } from "../context/task";
+import { useTheme } from "../context/theme";
+import { Moon, Sun } from "lucide-react";
 
 const Dashboard = () => {
   const { tasks } = useTasks();
+  const { theme, toggleTheme } = useTheme();
 
   const [filter, setFilter] = useState<FIlterType>({
     priority: undefined,
@@ -13,7 +16,16 @@ const Dashboard = () => {
 
   return (
     <div className="container mx-auto p-4">
-      <h1 className="text-3xl font-bold mb-6">Task Manager Dashboard</h1>
+      <div className="flex justify-between items-center mb-6">
+        <h1 className="text-3xl font-bold">Task Manager Dashboard</h1>
+
+        <button
+          onClick={toggleTheme}
+          className="p-2 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-white"
+        >
+          {theme === "light" ? <Moon size={24} /> : <Sun size={24} />}
+        </button>
+      </div>
       <FilterSection
         setFilter={(val) => setFilter((prev) => ({ ...prev, ...val }))}
       />

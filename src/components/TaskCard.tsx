@@ -19,9 +19,13 @@ const TaskCard = ({ task }: TaskCardProps) => {
 
   return (
     <>
-      <div className="bg-white p-4 rounded-lg shadow">
-        <h3 className="font-semibold mb-1.5">{task.title}</h3>
-        <p className="text-sm text-gray-600 mb-3">{task.description}</p>
+      <div className="bg-white p-4 rounded-lg shadow dark:bg-gray-700">
+        <h3 className="font-semibold mb-1.5 text-gray-900 dark:text-white">
+          {task.title}
+        </h3>
+        <p className="text-sm mb-3 text-gray-600 dark:text-gray-300">
+          {task.description}
+        </p>
         <div className="flex justify-between items-center text-sm mb-1">
           <p>Status</p>
           <button

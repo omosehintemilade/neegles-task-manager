@@ -1,12 +1,17 @@
-import "./styles/output.css";
 import Dashboard from "./pages/dashboard";
 import { TasksProvider } from "./context/task";
+import { ThemeProvider } from "./context/theme";
+import "./styles/output.css";
 
 function App() {
   return (
-    <TasksProvider>
-      <Dashboard />;
-    </TasksProvider>
+    <ThemeProvider>
+      <TasksProvider>
+        <div className="min-h-screen bg-white dark:bg-gray-900 transition-colors duration-300">
+          <Dashboard />
+        </div>
+      </TasksProvider>
+    </ThemeProvider>
   );
 }
 

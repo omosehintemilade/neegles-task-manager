@@ -1,5 +1,6 @@
 import KanbanColumn from "./KanbanColumn";
 import { EnumStatus, Task } from "../types";
+import { capitalizeFirstLetter } from "../utils";
 
 interface Props {
   tasks: Task[];
@@ -7,21 +8,14 @@ interface Props {
 
 const KanbanBoard = ({ tasks }: Props) => (
   <div className="flex flex-col md:flex-row gap-4">
-    <KanbanColumn
-      id={EnumStatus.PENDING}
-      title="Pending"
-      tasks={tasks.filter((task) => task.status === EnumStatus.PENDING)}
-    />
-    <KanbanColumn
-      id={EnumStatus.ONGOING}
-      title="Ongoing"
-      tasks={tasks.filter((task) => task.status === EnumStatus.ONGOING)}
-    />
-    <KanbanColumn
-      id={EnumStatus.COMPLETED}
-      title="Completed"
-      tasks={tasks.filter((task) => task.status === EnumStatus.COMPLETED)}
-    />
+    {Object.values(EnumStatus).map((value) => (
+      <KanbanColumn
+        key={value}
+        id={value}
+        title={capitalizeFirstLetter(value)}
+        tasks={tasks.filter((task) => task.status === value)}
+      />
+    ))}
   </div>
 );
 
