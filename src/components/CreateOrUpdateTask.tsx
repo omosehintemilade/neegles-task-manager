@@ -49,6 +49,7 @@ export function CreateOrUpdateTask({ defaultValues, open, setOpen }: Props) {
         title="Edit Task"
         actionButtons={{
           primary: {
+            text: "Save",
             onClick: handleSubmit(onSubmit)
           }
         }}
@@ -77,6 +78,7 @@ export function CreateOrUpdateTask({ defaultValues, open, setOpen }: Props) {
               <Controller
                 name="status"
                 control={control}
+                rules={{ required: "status cannot be empty" }}
                 render={({ field }) => (
                   <SelectDropdown
                     label={
@@ -98,6 +100,7 @@ export function CreateOrUpdateTask({ defaultValues, open, setOpen }: Props) {
               <Controller
                 name="priority"
                 control={control}
+                rules={{ required: "priority cannot be empty" }}
                 render={({ field }) => (
                   <SelectDropdown
                     label={

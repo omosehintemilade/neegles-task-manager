@@ -3,14 +3,11 @@ import React from "react";
 import {
   Dialog,
   DialogContent,
-  DialogDescription,
   DialogFooter,
   DialogHeader,
-  DialogTitle,
-  DialogTrigger
+  DialogTitle
 } from "./__dialog";
 import { cn } from "../utils";
-import clsx from "clsx";
 
 interface Props {
   open: boolean;
